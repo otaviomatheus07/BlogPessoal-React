@@ -1,0 +1,23 @@
+.imagem2{
+    background-image: url(https://tinypic.host/images/2023/03/05/pexels-lukas-574071-1.jpg);
+    background-repeat: no-repeat;
+    width: 100vh;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.textos2{
+    font-weight: bold !important;
+    padding: 10px;
+}
+
+.btnCancelar{
+    margin-right: 20px !important;
+    background-color: red !important;
+}
+.btnCad{
+    margin-right: 20px !important;
+    background-color: Black !important;
+
+}

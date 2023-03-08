@@ -14,8 +14,8 @@ function Home(){
                    <Button className="botao2" variant="contained">Criar Postagem</Button>
                    </div>
                 </Grid>
-                <Grid xs={6}>
-                    <p><img className="img" src="https://i.imgur.com/H88yIo2.png" alt="Imagem tela Inicial"  /></p>
+                <Grid item xs={6} >
+                    <img src="https://github.com/otaviomatheus07.png" alt="" width="200px" height="200px"/>
                 </Grid>
             </Grid>
         </div>
