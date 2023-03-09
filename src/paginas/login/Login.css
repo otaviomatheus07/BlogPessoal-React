@@ -4,13 +4,12 @@
 
 }
 .imagem{
-    background-image: url(https://media.giphy.com/media/bGgsc5mWoryfgKBx1u/giphy.gif);
+    background-image: url(https://media1.giphy.com/media/13FrpeVH09Zrb2/giphy.gif?cid=ecf05e479pdx4t26w53raknr11k3jhw28k6u1ax0ejc5mhxg&rid=giphy.gif&ct=g);
     background-repeat: no-repeat;
     width: 100vh;
-    min-height: 100vh;
+    min-height: 90vh;
     background-size: cover;
     background-position: center;
-
 }
 
 

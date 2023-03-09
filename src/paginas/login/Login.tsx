@@ -1,18 +1,18 @@
-import React, { ChangeEvent, useEffect, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import { Grid, Typography, TextField, Button } from "@material-ui/core";
 import { Box } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { purple } from '@mui/material/colors';
-import useLocalStorage from 'react-use-localstorage';
 import UsuarioLogin from '../models/UsuarioLogin';
 import { login } from '../../service/Service';
+import { useDispatch } from 'react-redux';
+import { addToken } from '../../store/tokens/action';
 
 
 function Login() {
     let navigate = useNavigate();
-    const [token, setToken]= useLocalStorage('token');
+    const [token, setToken]= useState('');
+    const dispatch = useDispatch()
 
 
     const [userLogin, setUserLogin] = useState<UsuarioLogin>(
@@ -32,7 +32,8 @@ function Login() {
     }
 
     useEffect(()=>{
-        if(token != ''){
+        if(token !== ''){
+            dispatch(addToken(token))
             navigate('/home')
         }
     }, [token])
@@ -77,7 +78,7 @@ function Login() {
                         </Box>
             </Grid>
             <Grid xs={4} className='imagem'>
-
+                
             </Grid>
         </Grid>
     );

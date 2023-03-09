@@ -1,47 +1,31 @@
 .banner{
-    background-image: linear-gradient( #ae00ff, rgb(0, 238, 255) );
     text-align: center;
-    color: #fff;
+    width: 100%;
 }
 .img{
-    width: 200px;
-    height: 200px;
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
 }
 
 .botao1{
     background-color: #fff !important;
-    color: #303f9f !important;
+    color:blue !important;
     margin-right: 16px !important;
     
 }
 
 .botao2{
-    background-color: blue !important;
+    background-color: #03045e !important;
     color: #fff !important;
 }
 
 .h1{
-    background: linear-gradient(to right,
-       #000000 10%,#000000 20%,
-       #000000 20%,rgb(0, 4, 255) 40%,
-       rgb(0, 4, 255) 40%, rgb(0, 4, 255) 60%,
-       rgb(0, 4, 255) 60%, #000000 80%,
-       rgb(0, 0, 0) 80%
-     );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #03045e;
      font-family: Arial;
  }
  .h3{
-    background: linear-gradient(to right,
-       #000000 10%,#000000 20%,
-       #000000 20%,rgb(0, 4, 255) 40%,
-       rgb(0, 4, 255) 40%, rgb(0, 4, 255) 60%,
-       rgb(0, 4, 255) 60%, #000000 80%,
-       rgb(0, 0, 0) 80%
-     );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #03045e;
      font-family: Arial;
 
  }

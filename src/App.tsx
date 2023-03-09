@@ -8,21 +8,36 @@ import Login from './paginas/login/Login';
 import Cadastro from './paginas/cadastro/Cadastro';
 import ListaPostagem from './components/postagens/listapostagem/ListaPostagem';
 import ListaTema from './components/temas/listatema/ListaTema';
+import store from './store/store';
+import { Provider } from 'react-redux';
+import CadastroPostagens from './components/postagens/cadastroPostagens/CadastroPostagens';
+import DeletarPostagens from './components/postagens/deletarPostagens/DeletarPostagens';
+import CadastroTema from './components/temas/cadastroTema/CadastroTema';
+import DeletarTema from './components/temas/deletarTema/DeletarTema';
 
 function App() {
   return (
-    <Router>
+    <Provider store={store}>
+      <Router>
       <Navbar />
       <Routes>
-      <Route path="/" element={<Login />} />
+            <Route path="/" element={<Login />} />
             <Route path="/login" element={<Login />} />
             <Route path="/home" element={<Home />} />
+            <Route path='/login' element={<Login />} />
             <Route path="/cadastro" element={<Cadastro />} />
-            <Route path="/tema" element={<ListaTema />} />
-            <Route path="/posts" element={<ListaPostagem />} />
+            <Route path="/temas" element={<ListaTema />} />
+            <Route path="/postagens" element={<ListaPostagem />} />
+            <Route path='/formularioTema' element={<CadastroTema />} />
+            <Route path='/formularioTema/:id' element={<CadastroTema />} />
+            <Route path='/deletarTema/:id' element={<DeletarTema />} />
+            <Route path='/formularioPostagem' element={<CadastroPostagens />} />
+            <Route path='/formularioPostagem/:id' element={<CadastroPostagens />} />
+            <Route path='/deletarPostagem/:id' element={<DeletarPostagens />} />
       </Routes>
         <Footer />
     </Router>
+    </Provider>
   );
 }
 

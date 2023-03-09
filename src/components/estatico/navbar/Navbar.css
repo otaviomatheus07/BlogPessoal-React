@@ -1,13 +1,14 @@
 .cursor{
     cursor: pointer;
-    color: white;
+    color: white !important;
 }
 .text-decorator-none{
-    text-decoration: none !important;
+    text-decoration: none;
     color: white !important;
 }
 .barra{
-    background-color: #ae00ff;
+    background-color: #03045e !important;
+    text-decoration: none !important;
 }
 .botoes{
     margin: 0 auto;

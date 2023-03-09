@@ -1,17 +1,20 @@
-import React, {useState, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import {Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import {Box} from '@mui/material';
-import useLocalStorage from 'react-use-localstorage';
 import {useNavigate} from 'react-router-dom';
 import { busca } from '../../../service/Service';
 import Tema from '../../../paginas/models/Tema';
 import './ListaTema.css';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokenReducer';
 
 
 function ListaTema() {
     const [temas, setTemas] = useState<Tema[]>([])
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState['token']>(
+    (state)=> state.token
+  )
     let navigate = useNavigate();
   
     useEffect(()=>{
@@ -23,7 +26,7 @@ function ListaTema() {
   
   
     async function getTema(){
-      await busca("/tema", setTemas, {
+      await busca("/temas", setTemas, {
         headers: {
           'Authorization': token
         }
