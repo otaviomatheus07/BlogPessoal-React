@@ -17,7 +17,7 @@ function Navbar() {
 
   function goLogout(){
     dispatch(addToken(''));
-    toast.error("Usuário deslogado",
+    toast.info("Usuário deslogado",
     {
       position: "top-center",
       autoClose: 2000,
