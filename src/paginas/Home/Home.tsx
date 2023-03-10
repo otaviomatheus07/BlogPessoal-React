@@ -2,6 +2,7 @@ import { Box, Button, Grid, Typography } from "@material-ui/core";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import ModalPostagem from "../../components/postagens/modalPostagens/ModalPostagens";
 import TabPostagem from "../../components/postagens/tabpostagem/TabPostagem";
 import { TokenState } from "../../store/tokens/tokenReducer";
@@ -15,7 +16,17 @@ function Home() {
   
     useEffect(() => {
       if (token == "") {
-          alert("Você precisa estar logado")
+        toast.error("Você precisa estar logado",
+        {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            })
           navigate("/login")
       }
   }, [token])
@@ -39,8 +50,8 @@ function Home() {
           </Grid>
   
           <Grid item xs={6}>
-          <img
-            src="https://i.imgur.com/H88yIo2.png"
+          <img className="img"
+            src="https://github.com/otaviomatheus07.png"
             alt=""
             width="500px"
             height="500px"

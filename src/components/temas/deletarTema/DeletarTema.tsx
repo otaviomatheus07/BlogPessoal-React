@@ -12,6 +12,7 @@ import useLocalStorage from "react-use-localstorage";
 import "./DeletarTema.css";
 import { buscaId, deleteId } from "../../../service/Service";
 import Tema from "../../../paginas/models/Tema";
+import { toast } from "react-toastify";
 
 
 function DeletarTema() {
@@ -22,7 +23,17 @@ function DeletarTema() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado");
+            toast.error("Você precisa estar logado",
+            {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                });
             navigate("/login");
         }
     }, [token]);
@@ -48,7 +59,17 @@ function DeletarTema() {
                 Authorization: token,
             },
         });
-        alert("Tema deletado com sucesso");
+        toast.error("Tema deletado com sucesso",
+        {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            });
     }
 
     function nao() {

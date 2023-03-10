@@ -6,6 +6,7 @@ import { Button, Container, TextField } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokenReducer";
+import { toast } from "react-toastify";
 
 function CadastroTema() {
     let navigate = useNavigate();
@@ -20,7 +21,17 @@ function CadastroTema() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            toast.error("Você precisa estar logado",
+            {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                })
             navigate("/login")
     
         }
@@ -60,14 +71,34 @@ function CadastroTema() {
                         'Authorization': token
                     }
                 })
-                alert('Tema atualizado com sucesso');
+                toast.info('Tema atualizado com sucesso',
+                {
+                    position: "top-center",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    });
             } else {
                 post(`/temas`, tema, setTema, {
                     headers: {
                         'Authorization': token
                     }
                 })
-                alert('Tema cadastrado com sucesso');
+                toast.info('Tema cadastrado com sucesso',
+                {
+                    position: "top-center",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    });
             }
             back()
     

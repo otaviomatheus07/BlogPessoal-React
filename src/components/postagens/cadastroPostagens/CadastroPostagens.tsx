@@ -8,6 +8,7 @@ import { busca, buscaId, post, put } from "../../../service/Service";
 import './CadastroPostagens.css';
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokenReducer";
+import { toast } from "react-toastify";
 
 function CadastroPostagens() {
     let navigate = useNavigate();
@@ -19,7 +20,17 @@ function CadastroPostagens() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            toast.error("Você precisa estar logado",
+            {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                })
             navigate("/login")
 
         }
@@ -87,14 +98,34 @@ function CadastroPostagens() {
                     'Authorization': token
                 }
             })
-            alert('Postagem atualizada com sucesso');
+            toast.info('Postagem atualizada com sucesso',
+            {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                });
         } else {
             post(`/postagens`, postagem, setPostagem, {
                 headers: {
                     'Authorization': token
                 }
             })
-            alert('Postagem cadastrada com sucesso');
+            toast.info('Postagem cadastrada com sucesso',
+            {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                });
         }
         back()
 

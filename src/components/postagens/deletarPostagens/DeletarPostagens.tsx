@@ -13,6 +13,7 @@ import useLocalStorage from "react-use-localstorage";
 import "./DeletarPostagens.css";
 import Postagem from "../../../paginas/models/Postagem";
 import { buscaId, deleteId } from "../../../service/Service";
+import { toast } from "react-toastify";
 
 
 function DeletarPostagens() {
@@ -23,7 +24,17 @@ function DeletarPostagens() {
 
   useEffect(() => {
     if (token == "") {
-      alert("Você precisa estar logado");
+      toast.error("Você precisa estar logado",
+      {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
       navigate("/login");
     }
   }, [token]);
@@ -49,7 +60,17 @@ function DeletarPostagens() {
         Authorization: token,
       },
     });
-    alert("Postagem deletada com sucesso");
+    toast.error("Postagem deletada com sucesso",
+    {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
   }
 
   function nao() {

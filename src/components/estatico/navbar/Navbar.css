@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Bangers&display=swap');
 .cursor{
+    text-align: center !important;
     cursor: pointer;
     color: white !important;
 }
@@ -12,4 +14,22 @@
 }
 .botoes{
     margin: 0 auto;
+}
+.blog{
+    font-size: 2rem;
+    width: 30vw;
+    font-family: 'Bangers', cursive;
+}
+
+.sair{
+    cursor: pointer;
+    text-align: end;
+}
+
+.sair:hover{
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #0001209e;
+    color: #fff;
 }

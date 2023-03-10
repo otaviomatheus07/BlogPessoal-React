@@ -14,12 +14,16 @@ import CadastroPostagens from './components/postagens/cadastroPostagens/Cadastro
 import DeletarPostagens from './components/postagens/deletarPostagens/DeletarPostagens';
 import CadastroTema from './components/temas/cadastroTema/CadastroTema';
 import DeletarTema from './components/temas/deletarTema/DeletarTema';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
     <Provider store={store}>
+      <ToastContainer />
       <Router>
       <Navbar />
+      <div style={{ minHeight: '60vh' }}>
       <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/login" element={<Login />} />
@@ -35,6 +39,7 @@ function App() {
             <Route path='/formularioPostagem/:id' element={<CadastroPostagens />} />
             <Route path='/deletarPostagem/:id' element={<DeletarPostagens />} />
       </Routes>
+      </div>
         <Footer />
     </Router>
     </Provider>
