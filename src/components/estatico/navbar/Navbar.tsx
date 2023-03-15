@@ -1,17 +1,42 @@
-import React from 'react'
-import { AppBar, Button, Toolbar, Typography } from "@material-ui/core";
-import { Box } from "@mui/material";
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import { makeStyles } from '@material-ui/core/styles';
+import { useState } from "react";
+import {Drawer, List, ListItem, ListItemText, Typography } from "@material-ui/core";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
+
+import { toast } from "react-toastify";
 import { TokenState } from '../../../store/tokens/tokenReducer';
 import { addToken } from '../../../store/tokens/action';
-import { toast } from 'react-toastify';
 
-function Navbar() {
-    const token = useSelector<TokenState, TokenState['token']>(
+
+const useStyles = makeStyles((theme) => ({
+  title: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  drawer: {
+    width: 200,
+  },
+}));
+
+const MyAppBar = () => {
+  const token = useSelector<TokenState, TokenState['token']>(
     (state)=>state.token
-  );
+  )
+  const classes = useStyles();
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const toggleDrawer = () => {
+    setIsDrawerOpen(!isDrawerOpen);
+  };
+
   const dispatch = useDispatch();
   let navigate = useNavigate();
 
@@ -31,63 +56,74 @@ function Navbar() {
     navigate('/login')
 }
 
-    var navbarComponent;
+let navbarComponent = null;
 
-  if(token != ''){
-    navbarComponent = <AppBar className="barra" position="relative">
-    <Toolbar variant="regular">
-      <Box display='flex' width={'100%'}>
-      <Box>
-        <Typography className='blog' variant="h5" color="inherit">
+if(token !== ''){
+  navbarComponent = (
+  <AppBar className='barra'  position="static">
+      <Toolbar>
+        <IconButton id='corMenu'
+          edge="start"
+          className={classes.menuButton}
+          color="inherit"
+          aria-label="menu"
+          onClick={toggleDrawer}
+        >
+          <MenuIcon />
+        </IconButton>
+        <Typography id="plan"  variant="h4" className={classes.title}>
+        <Link id='plan' to="/home" className="text-decorator-none1">
           Blog do Otavio
+          </Link>
         </Typography>
-      </Box>
-
-      <Box display="flex" gap="5px">
-        <Box mx={1}  className="cursor">
-          <Link to="/home" className="text-decorator-none">
-            <Typography className='cursor' variant="h6" color="inherit">
-              Home
-            </Typography>
-          </Link>
-        </Box>
-        <Box mx={1}  className="cursor">
-        <Link to="/postagens" className="text-decorator-none">
-          <Typography className='cursor' variant="h6" color="inherit">
-            Postagens
-          </Typography>
-          </Link>
-        </Box>
-        <Box mx={1}  className="cursor">
-        <Link to="/temas" className="text-decorator-none">
-          <Typography className='cursor' variant="h6" color="inherit">
-            Temas
-          </Typography>
-          </Link>
-        </Box>
-        <Box mx={1}  className="cursor">
-        <Link to="/formularioTema" className="text-decorator-none">
-          <Typography className='cursor' variant="h6" color="inherit">
-            Cadastrar tema
-          </Typography>
-          </Link>
-        </Box>
+        <Typography id="plan"  variant="h4" className={classes.title}>
+        Pense e Compartilhe
+        </Typography>
         
-      </Box>
-      </Box>
-      <Box mx={1}  className="sair" onClick={goLogout}>
+      </Toolbar>
+      <Drawer
+        anchor="left"
+        open={isDrawerOpen}
+        onClose={toggleDrawer}
+        className={classes.drawer}
+      >
+        <List className='lista' >
+          <ListItem  button onClick={toggleDrawer}>
+          <Link to="/home" className="text-decorator-none1">
+            <ListItemText primary="Home" />
+            </Link>
+          </ListItem>
+          <ListItem  button onClick={toggleDrawer}>
+          <Link to="/Postagens" className="text-decorator-none1">
+            <ListItemText primary="Postagens" />
+            </Link>
+          </ListItem>
+          <ListItem button onClick={toggleDrawer}>
+          <Link to="/Temas" className="text-decorator-none1">
+            <ListItemText primary="Temas" />
+            </Link>
+          </ListItem>
+          <ListItem button onClick={toggleDrawer}>
+          <Link to='/formularioTema' className="text-decorator-none1">
+            <ListItemText primary="Cadastrar Tema" />
+            </Link>
+          </ListItem>
+          <ListItem className="sair" onClick={goLogout}>
             <Typography  variant="h6" color="inherit" >
-              Logout
+              Sair da Loja
             </Typography>
-        </Box>
-    </Toolbar>
-  </AppBar>
-  }
+        </ListItem>
+        </List>
+      </Drawer>
+    </AppBar>
+
+)}
   return (
     <>
       {navbarComponent}
     </>
+    
   );
-}
+};
 
-export default Navbar
+export default MyAppBar;

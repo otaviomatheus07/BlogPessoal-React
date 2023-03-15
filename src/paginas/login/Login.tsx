@@ -70,8 +70,8 @@ function Login() {
 
     
     return (
-        <Grid  container direction='row' justifyContent='center' alignItems='center'>
-            <Grid alignItems='center' xs={6}>
+        <Grid   container direction='row' justifyContent='center' alignItems='center'>
+            <Grid className='caixa' alignItems='center' xs={6}>
                 <Box paddingX={20}>
                 <form onSubmit={onSubmit}>
                         <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textoscomponents'>Seja bem Vindo(a)</Typography>
@@ -88,13 +88,11 @@ function Login() {
                             <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
                         </Box>
                         <Link to='/cadastro' className='text-decorator-none'>
-                            <Typography variant='subtitle1' gutterBottom align='center' className='textoscomponents'>Cadastre-se</Typography>
+                            <Typography variant='subtitle1' gutterBottom align='center' className='textoscomponents2'>Cadastre-se</Typography>
                         </Link>    
                     </Box>
                 </Box>
-                <Box marginRight={1}>
-                            <Typography variant='subtitle2' gutterBottom align='center'>Seus dados são criptografados!</Typography>
-                        </Box>
+                
             </Grid>
             <Grid xs={4} className='imagem'>
                 

@@ -53,9 +53,9 @@ function ListaPostagem() {
     <>
     {posts.map((post) => (
       <Box m={2} display="flex" justifyContent='center' >
-        <Card variant="outlined">
+        <Card className='card' variant="outlined">
           <CardContent>
-            <Typography color="textSecondary" gutterBottom>
+            <Typography  color="textSecondary" gutterBottom>
               Postagens
             </Typography>
             <Typography variant="h5" component="h2">

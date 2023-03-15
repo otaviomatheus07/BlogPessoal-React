@@ -1,18 +1,46 @@
 
+hr{
+    background-color: #caf0f8;
+}
+hr {
+    background: radial-gradient(circle, black 50%, #caf0f8 1%);
+    border: none;
+    height: 1px;
+    margin: 1px 0;
+    width: 100%;
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+}
 .box1{    
-    background-color: #03045e;
-    color:white !important;
+    background-color: #caf0f8 !important;
+    color:black !important;
 }
 .box2{
-    background-color: #03045e;
-    color:white !important;
+    background-color: #caf0f8;
+    color:black !important;
 }
 
 .redes{
     padding: 10px;
     font-size: 60px !important;
-    color: white !important;
+    color: black !important;
 }
 .textos{
-    color: white !important;
+    color: black !important;
+}
+
+.redes:hover{
+    position:relative;
+    width: 60px;
+    height: 60px;
+    top:-4px;box-shadow:0 4px 4px #999;
+    transition: all .2s ease-in-out;
+    border-radius: 10px;
+    background-color: #caf0f8;
+    color: #fff;
 }

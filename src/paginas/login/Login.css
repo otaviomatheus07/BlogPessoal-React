@@ -1,7 +1,27 @@
+.caixa{
+    border-radius: 35px;
+}
+.caixa:hover{
+    top:-4px;box-shadow:0 4px 4px #03045e;
+    transition: all .2s ease-in-out;
+    border-radius: 10px;
+    background-color: #03055e50;
+}
+
+
 .textoscomponents{
+    color: #03045e !important;
     font-weight: bold !important;
     text-decoration: none !important;
 
+}
+.textoscomponents2{
+    color: white;
+}
+.textoscomponents2:hover{
+    font-weight: bold !important;
+    text-decoration: none !important;
+    color: #03045e !important;
 }
 .imagem{
     background-image: url(https://media1.giphy.com/media/13FrpeVH09Zrb2/giphy.gif?cid=ecf05e479pdx4t26w53raknr11k3jhw28k6u1ax0ejc5mhxg&rid=giphy.gif&ct=g);
@@ -18,5 +38,5 @@
     color: black !important;
 }
 .botaologar{
-    background-color: black !important;
+    background-color: #03045e !important;
 }

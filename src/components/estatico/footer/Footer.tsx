@@ -16,8 +16,12 @@ function Footer(){
       var footerComponent;
       
       if(token != ""){
-        footerComponent = <Grid container  direction="row" justifyContent="center" alignItems="center">
+        footerComponent = 
+        <div>
+            <hr  />
+            <Grid container  direction="row" justifyContent="center" alignItems="center">
         <Grid alignItems="center" item xs={12}>
+            
             <Box className='box1'>
                 <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
                     <Typography variant="h5" align="center" gutterBottom className='textos'>Segue "nois" ae </Typography>
@@ -38,7 +42,7 @@ function Footer(){
             </Box>
         </Grid>
     </Grid> 
-
+    </div>
       }
 
     return (

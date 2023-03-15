@@ -1,35 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Bangers&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+
 .cursor{
     text-align: center !important;
     cursor: pointer;
     color: white !important;
 }
-.text-decorator-none{
+.text-decorator-none1{
     text-decoration: none;
     color: white !important;
+}
+#corMenu{
+    background-color: #03045e !important;
 }
 .barra{
     background-color: #03045e !important;
     text-decoration: none !important;
+
 }
-.botoes{
+.botoes{ 
     margin: 0 auto;
-}
-.blog{
-    font-size: 2rem;
-    width: 30vw;
-    font-family: 'Bangers', cursive;
 }
 
 .sair{
     cursor: pointer;
-    text-align: end;
+    color: white;
+}
+#plan{
+    font-family: 'Bangers', cursive;
 }
 
-.sair:hover{
-    margin: 5px;
-    padding: 5px;
-    border-radius: 10px;
-    background-color: #0001209e;
-    color: #fff;
+.lista{
+    background-color: #03045e;
 }
